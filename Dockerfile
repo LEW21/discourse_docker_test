@@ -16,8 +16,8 @@ ENV RUBY_GC_MALLOC_LIMIT 40000000
 ENV RUBY_HEAP_MIN_SLOTS 800000
 
 ENV DISCOURSE_DB_SOCKET /var/run/postgresql
-ENV DISCOURSE_DB_HOST
-ENV DISCOURSE_DB_PORT
+ENV DISCOURSE_DB_HOST ""
+ENV DISCOURSE_DB_PORT ""
 
 
 ENV LANG en_US.UTF-8
@@ -29,13 +29,13 @@ ENV DISCOURSE_DEVELOPER_EMAILS my-email-address@example.com
 ENV DISCOURSE_HOSTNAME discourse.example.com
 
 ## The mailserver this Discourse instance will use
-ENV DISCOURSE_SMTP_ADDRESS smtp.example.com          # (mandatory)
-ENV DISCOURSE_SMTP_PORT # 587                        # (optional)
-ENV DISCOURSE_SMTP_USER_NAME # user@example.com      # (optional)
-ENV DISCOURSE_SMTP_PASSWORD # p@ssword               # (optional)
+ENV DISCOURSE_SMTP_ADDRESS smtp.example.com             # (mandatory)
+ENV DISCOURSE_SMTP_PORT "" # 587                        # (optional)
+ENV DISCOURSE_SMTP_USER_NAME "" # user@example.com      # (optional)
+ENV DISCOURSE_SMTP_PASSWORD "" # p@ssword               # (optional)
 
 ## the origin pull CDN address for this Discourse instance
-ENV DISCOURSE_CDN_URL # //discourse-cdn.example.com
+ENV DISCOURSE_CDN_URL "" # //discourse-cdn.example.com
 
 
 ENTRYPOINT ["/app/entrypoint.sh"]
