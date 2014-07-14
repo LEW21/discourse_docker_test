@@ -1,11 +1,3 @@
-params:
-  # SSH key is required for remote access into the container
-  # you may also use ssh-import-id
-  ssh_key: ""
-  # so ssh-import-id works
-
-env:
-  HOME: /root
 
 run:
 
@@ -28,8 +20,7 @@ run:
       cmd:
         - mkdir -p /var/run/sshd
         - mkdir -p /root/.ssh
-        - echo "$ssh_key" >> /root/.ssh/authorized_keys
-        - echo "$$ENV_SSH_PUB_KEY" >> /root/.ssh/authorized_keys
+        - ln -s /app/authorized_keys /root/.ssh/
         - chmod 640 /root/.ssh/authorized_keys
         - rm /etc/update-motd.d/00-header
         - rm /etc/update-motd.d/10-help-text
