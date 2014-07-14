@@ -3,6 +3,6 @@ set -e
 
 cd /pups
 git pull
-cat /app/conf.d/*.yaml | /pups/bin/pups --stdin
+(for f in /app/conf.d/*; do cat $f; echo _FILE_SEPERATOR_; done; echo "noop:") | /pups/bin/pups --stdin
 
 exec "$@"
