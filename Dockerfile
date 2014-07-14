@@ -13,7 +13,7 @@ ENV RAILS_ENV production
 
 # How many concurrent web requests are supported?
 # With 2GB we recommend 3-4 workers, with 1GB only 2
-ENV UNICORN_WORKERS 3
+ENV UNICORN_WORKERS 2
 ENV UNICORN_SIDEKIQS 1
 
 # slightly less aggressive than "recommendation" but works fine with oobgc
